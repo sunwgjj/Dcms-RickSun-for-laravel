@@ -22,8 +22,5 @@
 /**
  * 后台路由
  */
-Route::group(['prefix' => 'mcp', 'namespace' => 'backend'], function (){
-    Route::get('/', 'BackendController@dashboard')->name('admin');
-    //Route::resource();
-});
+include_once("backend.php");
 
