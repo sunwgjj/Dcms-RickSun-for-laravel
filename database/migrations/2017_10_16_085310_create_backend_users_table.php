@@ -13,7 +13,15 @@ class CreateBackendUsersTable extends Migration
      */
     public function up()
     {
-        //
+        //BackendUsers
+        Schema::create('backend_users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('uname',32);
+            $table->string('password',108);
+            $table->string('lgoinip',16);
+            $table->rememberToken();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class CreateBackendUsersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('backend_users');
     }
 }
